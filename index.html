@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hot Wheels Collector</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="hw.png" />
+</head>
+<body>
+
+  <div class="ticker">
+    <div class="ticker-text">🏎️💨💨💨 🔥 Welcome to the Hot Wheels Collector App ✨ Add, rate, and filter your cars. ⚡️Stop wasting money 🤡💦  </div>
+  </div>
+
+  <header>
+    <h1>Hot Wheels Collector</h1>
+    <button id="toggleMode">🌙 Dark Mode</button>
+  </header>
+
+  <!-- View toggle button -->
+  <div class="view-toggle">
+    <button id="viewToggleBtn">View Collection</button>
+  </div>
+
+  <form id="carForm">
+    <input type="text" id="name" placeholder="Car Name / Model" required />
+    <input type="number" id="value" placeholder="Value in ₹" min="0" required />
+    <input type="url" id="image" placeholder="Image URL" required />
+
+    <select id="type">
+      <option value="">Select Type</option>
+      <option value="Supercar">Supercar</option>
+      <option value="Muscle">Muscle</option>
+      <option value="Truck">Truck</option>
+      <option value="Classic">Classic</option>
+      <option value="Custom">Custom</option>
+    </select>
+
+    <select id="packStatus" required>
+      <option value="">Select Pack Status</option>
+      <option value="In-Pack">In-Pack</option>
+      <option value="Opened">Opened</option>
+    </select>
+
+    <select id="category" required>
+      <option value="">Select Category</option>
+      <option value="Mainline">Mainline</option>
+      <option value="Ultra Hots">Ultra Hots</option>
+      <option value="5 Pack">5 Pack</option>
+      <option value="2 Pack">2 Pack</option>
+      <option value="Track Builders">Track Builders</option>
+      <option value="Others">Others</option>
+    </select>
+
+    <input type="number" id="rating" placeholder="Condition Rating (0–5)" min="0" max="5" required />
+    <input type="url" id="wiki" placeholder="Wiki Info URL (optional)" />
+    <input type="url" id="marketplace" placeholder="Marketplace URL (optional)" />
+    <button type="submit" id="submitBtn">Add to Collection</button>
+  </form>
+
+  <div class="controls">
+    <h2 id="entryCount">Total Items: 0</h2>
+
+    <label for="filterPack">Pack Status:</label>
+    <select id="filterPack">
+      <option value="">All</option>
+      <option value="In-Pack">In-Pack</option>
+      <option value="Opened">Opened</option>
+    </select>
+
+    <label for="filterCategory">Category:</label>
+    <select id="filterCategory">
+      <option value="">All</option>
+      <option value="Mainline">Mainline</option>
+      <option value="Ultra Hots">Ultra Hots</option>
+      <option value="5 Pack">5 Pack</option>
+      <option value="2 Pack">2 Pack</option>
+      <option value="Track Builders">Track Builders</option>
+      <option value="Others">Others</option>
+    </select>
+  </div>
+
+  <div id="error" class="error"></div>
+  <div id="collection" class="grid-layout"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

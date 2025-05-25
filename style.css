@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root {
+  --bg: linear-gradient(to bottom right, #f0f4f8, #ffffff);
+  --text: #222;
+  --card-bg: #ffffff;
+  --form-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --accent: #d62828;
+}
+
+body.dark {
+  --bg: linear-gradient(to bottom right, #121212, #1e1e1e);
+  --text: #f1f1f1;
+  --card-bg: #1e1e1e;
+  --form-bg: #1e1e1e;
+  --shadow: rgba(255, 255, 255, 0.05);
+  --accent: #ff6b6b;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2rem;
+  transition: background 0.5s, color 0.3s;
+}
+
+/* Ticker */
+.ticker {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--accent);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+}
+
+.ticker-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 10s linear infinite;
+  padding-left: 0;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 2px 6px var(--shadow);
+}
+
+/* Dark mode toggle */
+#toggleMode {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#toggleMode:hover {
+  background-color: #c52219;
+}
+
+/* View Collection toggle */
+.view-toggle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#viewToggleBtn {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+#viewToggleBtn:hover {
+  background-color: #a61f1f;
+}
+
+/* Form styling */
+form {
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  padding: 2rem 2.5rem;
+  background: var(--form-bg);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+form input,
+form select {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  background-color: #fafafa;
+  transition: 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+  border-color: var(--accent);
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.2);
+}
+
+form button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: #a61f1f;
+}
+
+/* Error message */
+#error {
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Filter and count controls */
+.controls {
+  text-align: left;
+  max-width: 1200px;
+  margin: 1rem auto 2rem;
+  padding: 0 1rem;
+}
+
+.controls h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.controls label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.controls select {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Grid layout for cards */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 2fr));
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Card styles */
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transform-origin: center center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  min-height: 420px;
+}
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px var(--shadow);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.card-content h3 {
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.card-content p {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.card-content a {
+  display: inline-block;
+  margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #1d3557;
+  text-decoration: none;
+}
+.card-content a:hover {
+  text-decoration: underline;
+}
+
+/* Rating stars */
+.rating {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #f1c40f;
+}
+
+/* Button layout inside each card */
+.card-buttons {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card button {
+  flex: 1;
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.card button.edit {
+  background-color: #2a9d8f;
+}
+.card button.edit:hover {
+  background-color: #1d6f66;
+}
+
+.card button.delete {
+  background-color: #d62828;
+}
+.card button.delete:hover {
+  background-color: #a61f1f;
+}
+
+.card button.info {
+  background-color: #457b9d;
+}
+.card button.info:hover {
+  background-color: #35607b;
+}
